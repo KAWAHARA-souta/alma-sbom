@@ -182,16 +182,47 @@ def cli_main():
     albs_url = ALBS_URL
 
 
+    print("*********************")
+    print("** build data    **")
+    print("*********************")
+    albs_builds_endpoint = f'{albs_url}/api/v1/builds'
+    build_id = 8307
+    response = requests.get(
+        url=f'{albs_builds_endpoint}/{build_id}',
+    )
+    response.raise_for_status()
+    json_data = response.json()
+    print("build_id: 8307")
+    for task in json_data['tasks']:
+        print("-----")
+        print(task)
+
+    print()
+
+    print("*********************")
+    print("** package data    **")
+    print("*********************")
     immudb_info_about_package = _extract_immudb_info_about_package(
-        immudb_hash="e86c3d10f3185114d4021a6ed512d4a0d9e0ac2a62766e593d862c33fe9ac09b",
+        immudb_hash="1beff4d72ade264196bc7467a505ca7a9a766163deb5d54409e7dcc622c3ad05",
         immudb_wrapper=immudb_wrapper,
     )
     source_rpm, package_nevra = _get_specific_info_about_package(
         immudb_info_about_package=immudb_info_about_package,
     )
+    print("hash: 1beff4d72ade264196bc7467a505ca7a9a766163deb5d54409e7dcc622c3ad05")
+    print(immudb_info_about_package)
 
-    print(immudb_info_about_package['Metadata'])
+    print("*********************")
 
+    immudb_info_about_package = _extract_immudb_info_about_package(
+        immudb_hash="cc9d4c40630118ea7fbf478437c81f404a9dc3af15307b541e48160de53f0a3c",
+        immudb_wrapper=immudb_wrapper,
+    )
+    source_rpm, package_nevra = _get_specific_info_about_package(
+        immudb_info_about_package=immudb_info_about_package,
+    )
+    print("hash: cc9d4c40630118ea7fbf478437c81f404a9dc3af15307b541e48160de53f0a3c")
+    print(immudb_info_about_package)
 
 
 if __name__ == '__main__':
