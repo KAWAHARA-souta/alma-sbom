@@ -6,6 +6,7 @@ from typing import Optional
 
 class SbomRecordType(Enum):
     SPDX = 'spdx'
+    SPDX3 = 'spdx3'
     CYCLONEDX = 'cyclonedx'
 
     @classmethod
@@ -35,6 +36,9 @@ class SbomType:
             SbomFileFormatType.XML,
             SbomFileFormatType.YAML,
             SbomFileFormatType.TAGVALUE,
+        ],
+        SbomRecordType.SPDX3: [
+            SbomFileFormatType.JSON,
         ],
         SbomRecordType.CYCLONEDX: [
             SbomFileFormatType.JSON,
