@@ -19,8 +19,10 @@ jobs:
         run: |
           python3.9 -m venv /tmp/env
           source /tmp/env/bin/activate
-          echo "VIRTUAL_ENV=/tmp/venv" >> $GITHUB_ENV
-          echo "/tmp/venv/bin" >> $GITHUB_PATH
+          ### https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-environment-variable
+          echo PATH=$PATH >> $GITHUB_ENV
+          # echo "VIRTUAL_ENV=/tmp/venv" >> $GITHUB_ENV
+          # echo "/tmp/venv/bin" >> $GITHUB_PATH
       - name: Debug - Show pip freeze before install dependencies
         run: |
           python -m pip freeze
