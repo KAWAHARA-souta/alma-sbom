@@ -15,19 +15,21 @@ jobs:
       image: almalinux:9
     steps:
       - uses: actions/checkout@v4
-      - name: Install Python and dependencies
+      - name: Create and activate virtual environment
         run: |
-          dnf update -y
-          dnf install -y python3-pip git
-      - name: Debug - Show pip freeze before install
+          python3.9 -m venv /tmp/env
+          source /tmp/env/bin/activate
+          echo "VIRTUAL_ENV=/tmp/venv" >> $GITHUB_ENV
+          echo "/tmp/venv/bin" >> $GITHUB_PATH
+      - name: Debug - Show pip freeze before install dependencies
         run: |
-          python3.9 -m pip freeze
+          python -m pip freeze
       - name: Setup environment
         run: |
-          python3.9 -m pip install -e .[dev]
-      - name: Debug - Show pip freeze
+          python -m pip install -e .[dev]
+      - name: Debug - Show pip freeze after install dependencies
         run: |
-          python3.9 -m pip freeze
+          python -m pip freeze
       - name: Run pytest
         run: |
           pytest tests/
