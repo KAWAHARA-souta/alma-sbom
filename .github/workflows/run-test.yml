@@ -15,10 +15,10 @@ jobs:
       image: almalinux:9
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
+      - name: Install Python and dependencies
+        run: |
+          dnf update -y
+          dnf install -y python39 python39-pip python39-devel gcc
       - name: Setup environment
         run: |
           python -m pip install .[dev]
