@@ -19,9 +19,15 @@ jobs:
         run: |
           dnf update -y
           dnf install -y python3-pip git
+      - name: Debug - Show pip freeze before install
+        run: |
+          python3.9 -m pip freeze
       - name: Setup environment
         run: |
-          python3.9 -m pip install .[dev]
+          python3.9 -m pip install -e .[dev]
+      - name: Debug - Show pip freeze
+        run: |
+          python3.9 -m pip freeze
       - name: Run pytest
         run: |
           pytest tests/
