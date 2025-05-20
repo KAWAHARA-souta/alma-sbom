@@ -15,6 +15,10 @@ jobs:
       image: almalinux:9
     steps:
       - uses: actions/checkout@v4
+      - name: Install Python and dependencies
+        run: |
+          dnf update -y
+          dnf install -y git
       - name: Create and activate virtual environment
         run: |
           python3.9 -m venv /tmp/env
