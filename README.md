@@ -1,5 +1,11 @@
 # AlmaLinux SBOM data management utilities
 
+
+
+!!!!!! PR2 !!!!!!
+
+
+
 These utilities consist in:
 * __AlmaLinux SBOM CLI__: This utility is used to create SBOM records for artifacts created with the [AlmaLinux Build System](https://github.com/AlmaLinux/build-system). It generates SBOM records for Builds and Packages.
 * __AlmaLinux Git Notarization Tool__: This utility allows to manually notarize [AlmaLinux git sources](https://git.almalinux.org) using the [ImmudbWrapper](https://github.com/AlmaLinux/immudb-wrapper).
