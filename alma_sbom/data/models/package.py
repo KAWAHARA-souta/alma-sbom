@@ -3,7 +3,7 @@ from enum import Enum
 from logging import getLogger
 
 from alma_sbom.type import Hash, PackageNevra, Licenses
-from alma_sbom.data.attributes.property import (
+from .common import (
     Property,
     PackageProperties,
     BuildPropertiesForPackage as BuildProperties,
