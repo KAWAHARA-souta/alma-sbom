@@ -13,4 +13,7 @@ from .common import (
     BuildPropertiesForPackage,
     BuildPropertiesForBuild,
     SBOMProperties,
+    DataSources,
+    SourceImmudb,
+    SourceRPM,
 )

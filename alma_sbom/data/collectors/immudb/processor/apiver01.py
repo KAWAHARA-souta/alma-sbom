@@ -11,6 +11,8 @@ from alma_sbom.data.models import (
     SrpmSourceProperties,
     BuildPropertiesForPackage as BuildProperties,
     SBOMProperties,
+    DataSources,
+    SourceImmudb,
 )
 
 class DataProcessor01(DataProcessor):
@@ -31,6 +33,7 @@ class DataProcessor01(DataProcessor):
             source_rpm = None,
             hashs = [self.hash],
             package_timestamp = self.immudb_info.get('timestamp'),
+            source_info = DataSources(sources=[SourceImmudb()]),
             package_properties = pkg_props,
             build_properties = build_props,
             sbom_properties = sbom_props,
