@@ -2,11 +2,11 @@ import os
 import pytest
 
 from alma_sbom.type import Hash, PackageNevra, Licenses, Algorithms
+from alma_sbom.data import Property
 from alma_sbom.data.collectors import RpmCollector
 from alma_sbom.data.collectors.rpm import hash_file
-from alma_sbom.data.models import Package
-from alma_sbom.data.attributes.property import (
-    Property,
+from alma_sbom.data.models import (
+    Package,
     PackageProperties,
     BuildPropertiesForPackage as BuildProperties,
     GitSourceProperties,

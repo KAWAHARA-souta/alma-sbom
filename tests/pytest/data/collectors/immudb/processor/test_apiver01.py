@@ -2,7 +2,7 @@ import pytest
 
 from alma_sbom.type import Hash, Algorithms
 from alma_sbom.data import Package, PackageNevra
-from alma_sbom.data.attributes.property import (
+from alma_sbom.data.models import (
     PackageProperties,
     BuildSourceProperties,
     GitSourceProperties,

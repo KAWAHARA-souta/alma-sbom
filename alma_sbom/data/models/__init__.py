@@ -5,6 +5,7 @@ from .iso import Iso
 
 ### Common Data Model
 from .common import (
+    Property,
     PackageProperties,
     BuildSourceProperties,
     GitSourceProperties,

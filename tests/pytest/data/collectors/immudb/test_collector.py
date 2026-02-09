@@ -3,14 +3,13 @@ import pytest
 
 from alma_sbom.type import Hash, PackageNevra, Licenses, Algorithms
 from alma_sbom.data.collectors import ImmudbCollector
-from alma_sbom.data.attributes.property import (
-    # Property,
+from alma_sbom.data.models import (
+    Package,
     PackageProperties,
     BuildPropertiesForPackage as BuildProperties,
     GitSourceProperties,
     SBOMProperties,
 )
-from alma_sbom.data.models import Package
 from alma_sbom.cli.config import CommonConfig
 
 TESTED_HASH_VALUE = '05dc1b806bd5456d40e3d7f882ead037aaf480c596e83fbfb6ab86be74a2d8d1'
