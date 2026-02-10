@@ -9,6 +9,8 @@ from alma_sbom.data.models import (
     SrpmSourceProperties,
     BuildPropertiesForPackage as BuildProperties,
     SBOMProperties,
+    DataSources,
+    SourceImmudb,
 )
 from alma_sbom.data.collectors.immudb.processor.apiver02 import DataProcessor02
 
@@ -52,6 +54,7 @@ EXPECTED_PACKAGE = Package(
     source_rpm='bash-5.1.8-9.el9.src.rpm',
     package_timestamp=1714500330,
     hashs=[None],
+    source_info=DataSources(sources=[SourceImmudb()]),
     licenses=None,
     summary=None,
     description=None,

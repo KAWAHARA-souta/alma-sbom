@@ -9,6 +9,8 @@ from alma_sbom.data.models import (
     SrpmSourceProperties,
     BuildPropertiesForPackage as BuildProperties,
     SBOMProperties,
+    DataSources,
+    SourceImmudb,
 )
 from alma_sbom.data.collectors.immudb.processor.apiver01 import DataProcessor01
 
@@ -52,6 +54,7 @@ EXPECTED_PACKAGE = Package(
     #     algorithm=Algorithms.SHA_256,
     # )],
     hashs=[None],
+    source_info=DataSources(sources=[SourceImmudb()]),
     licenses=None,
     summary=None,
     description=None,

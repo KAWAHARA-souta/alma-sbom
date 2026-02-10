@@ -11,9 +11,12 @@ from alma_sbom.data.models import (
     BuildPropertiesForPackage as BuildProperties,
     GitSourceProperties,
     SBOMProperties,
+    DataSources,
+    SourceRPM,
 )
 
-TESTED_PACKAGE_NAME = 'bash-5.1.8-9.el9.x86_64.rpm'
+TESTED_PACKAGE = 'bash-5.1.8-9.el9.x86_64'
+TESTED_PACKAGE_NAME = TESTED_PACKAGE + '.rpm'
 TESTED_PACKAGE_PATH = os.path.dirname(__file__) + f'/{TESTED_PACKAGE_NAME}'
 
 EXPECTED_LICENSES = licenses=Licenses(ids=[], expression='GPLv3+'),
@@ -32,6 +35,7 @@ EXPECTED_PACKAGE = Package(
         value='05dc1b806bd5456d40e3d7f882ead037aaf480c596e83fbfb6ab86be74a2d8d1',
         algorithm=Algorithms.SHA_256,
     )],
+    source_info=DataSources(sources=[SourceRPM(package_name=TESTED_PACKAGE)]),
     licenses=Licenses(ids=[], expression='GPLv3+'),
     summary='The GNU Bourne Again shell',
     description='The GNU Bourne Again shell (Bash) is a shell or command language\ninterpreter that is compatible with the Bourne shell (sh). Bash\nincorporates useful features from the Korn shell (ksh) and the C shell\n(csh). Most sh scripts can be run by bash without modification.',
