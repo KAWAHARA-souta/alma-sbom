@@ -47,7 +47,7 @@ def package_instance() -> Package:
             source=GitSourceProperties(
                 # source_type='git',
                 git_url='https://git.almalinux.org/rpms/bash.git',
-                git_commit='https://git.almalinux.org/rpms/bash.git',
+                git_commit='4533026da95ca85fab57eafbc91c28a3a2dabd79',
                 git_ref='imports/c9/bash-5.1.8-9.el9',
                 git_commit_immudb_hash='4533026da95ca85fab57eafbc91c28a3a2dabd79',
             ),
@@ -91,7 +91,7 @@ def test_get_properties(package_instance: Package) -> None:
         target_arch='x86_64',
         source=GitSourceProperties(
             git_url='https://git.almalinux.org/rpms/bash.git',
-            git_commit='https://git.almalinux.org/rpms/bash.git',
+            git_commit='4533026da95ca85fab57eafbc91c28a3a2dabd79',
             git_ref='imports/c9/bash-5.1.8-9.el9',
             git_commit_immudb_hash='4533026da95ca85fab57eafbc91c28a3a2dabd79',
         ),

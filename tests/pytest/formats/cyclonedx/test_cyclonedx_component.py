@@ -42,7 +42,7 @@ EXPECTED_PKG_COMPONENT = Component(
         CDXProperty(name='almalinux:albs:build:ID', value='11363'),
         CDXProperty(name='almalinux:albs:build:author', value='eabdullin1 <55892454+eabdullin1@users.noreply.github.com>'),
         CDXProperty(name='almalinux:albs:build:packageType', value='rpm'),
-        CDXProperty(name='almalinux:albs:build:source:gitCommit', value='https://git.almalinux.org/rpms/bash.git'),
+        CDXProperty(name='almalinux:albs:build:source:gitCommit', value='4533026da95ca85fab57eafbc91c28a3a2dabd79'),
         CDXProperty(name='almalinux:albs:build:source:gitCommitImmudbHash', value='4533026da95ca85fab57eafbc91c28a3a2dabd79'),
         CDXProperty(name='almalinux:albs:build:source:gitRef', value='imports/c9/bash-5.1.8-9.el9'),
         CDXProperty(name='almalinux:albs:build:source:gitURL', value='https://git.almalinux.org/rpms/bash.git'),
@@ -114,7 +114,7 @@ def package_instance() -> Package:
             source=GitSourceProperties(
                 # source_type='git',
                 git_url='https://git.almalinux.org/rpms/bash.git',
-                git_commit='https://git.almalinux.org/rpms/bash.git',
+                git_commit='4533026da95ca85fab57eafbc91c28a3a2dabd79',
                 git_ref='imports/c9/bash-5.1.8-9.el9',
                 git_commit_immudb_hash='4533026da95ca85fab57eafbc91c28a3a2dabd79',
             ),

@@ -73,7 +73,7 @@ EXPECTED_PACKAGE = Package(
         source=GitSourceProperties(
             # source_type='git',
             git_url='https://git.almalinux.org/rpms/bash.git',
-            git_commit='https://git.almalinux.org/rpms/bash.git',
+            git_commit='5cd0d67a640d79bbbbd09ed867f699136b4db8b6',
             git_ref='imports/c8/bash-4.4.20-4.el8_6',
             git_commit_immudb_hash='7893d8abfaebb88e3910b2f9b7a06497bee84e8e01b00f316097df6f70f976de'
         )

@@ -54,7 +54,7 @@ class DataProcessor01(DataProcessor):
         if source_type == 'git':
             build_src_props = GitSourceProperties(
                git_url=self.immudb_metadata.get('git_url'),
-               git_commit=self.immudb_metadata.get('git_url'),
+               git_commit=self.immudb_metadata.get('git_commit'),
                git_ref=self.immudb_metadata.get('git_ref'),
                git_commit_immudb_hash=self.immudb_metadata.get('alma_commit_sbom_hash'),
             )
